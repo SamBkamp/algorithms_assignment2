@@ -7,6 +7,7 @@
 #include "heapsort.h"
 #include "quicksort.h"
 #include "insertionsort.h"
+#include "selectionsort.h"
 
 
 int main(int argc, char* argv[]){
@@ -33,6 +34,9 @@ int main(int argc, char* argv[]){
   memcpy(heapList, list, sizeof(int) * IN_LEN);
   int* insertionList = malloc(sizeof(int) * IN_LEN);
   memcpy(insertionList, list, sizeof(int) * IN_LEN);
+  int* selectionList = malloc(sizeof(int) * IN_LEN);
+  memcpy(selectionList, list, sizeof(int) * IN_LEN);
+  
 
   printf("QUICK SORT:\n");
   printList(quickList);
@@ -53,7 +57,11 @@ int main(int argc, char* argv[]){
   printList(insertionList);
   insertionSort(insertionList, IN_LEN, 0);
   printList(insertionList);
-  
+
+  printf("SELECTION SORT:\n");
+  printList(selectionList);
+  selectionSort(selectionList, IN_LEN, 0);
+  printList(selectionList);    
   
   free(list);
   free(quickList);
