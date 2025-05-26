@@ -10,12 +10,10 @@ void insertionSort(int* list, int len, int key){
   if(key == len) return;
   int j = key;
   while(list[key] < list[j-1] && j >= 0){
+    list[j+1] = list[j];
     j--;
   }
-  int temp = list[key];
-  for (int k = key-1; k >= j; k--){
-    list[k+1] = list[k];
-  }
-  list[j] = temp;
+  
+  list[j] = list[key];
   insertionSort(list, len, key+1);
 }

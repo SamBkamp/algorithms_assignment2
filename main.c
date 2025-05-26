@@ -45,6 +45,7 @@ int main(int argc, char* argv[]){
   //dealloc
   free(mergeList);
   
+  
   int* heapList = malloc(sizeof(int) * IN_LEN);
   memcpy(heapList, list, sizeof(int) * IN_LEN);
   //printList(heapList);
@@ -55,6 +56,7 @@ int main(int argc, char* argv[]){
   printf("HEAP SORT TOOK %d MS\n", (stop.tv_sec - start.tv_sec) * 1000000 + stop.tv_usec - start.tv_usec);
   free(heapList);
 
+  
   int* insertionList = malloc(sizeof(int) * IN_LEN);
   memcpy(insertionList, list, sizeof(int) * IN_LEN);
   //printList(insertionList);
@@ -74,7 +76,7 @@ int main(int argc, char* argv[]){
   //printList(selectionList);
   printf("SELECTION SORT TOOK %d MS\n", (stop.tv_sec - start.tv_sec) * 1000000 + stop.tv_usec - start.tv_usec);
   free(selectionList);
-
+  
   printf("------------------------\n");
   
   free(list);    
