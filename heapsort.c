@@ -5,33 +5,35 @@
 #include "heapsort.h"
 #include "debug.h"
 
+void maxHeapify(int* list, int i, int len) {
+    int largest = i; // Start with the current node
+    int l = (i << 1) + 1; // Left child index
+    int r = (i << 1) + 2; // Right child index
 
-void maxHeapMaker(int* list, int i,int len){
+    // Check if left child exists and is greater than current largest
+    if (l < len && list[l] > list[largest]) {
+        largest = l;
+    }
 
-  int l = (i<<1)+1; //left hand side (i*2 + 1)
-  int r = (i<<1)+2; //right hand side (i*2 + 2)
-  
-  if(l > len-1 || r > len-1) 
-    return; //means we're at leaf node
-  
+    // Check if right child exists and is greater than current largest
+    if (r < len && list[r] > list[largest]) {
+        largest = r;
+    }
 
-  maxHeapMaker(list, l, len);
-  maxHeapMaker(list, r, len);
-  
-  int larger = list[l] > list[r] ? l : r;//get larger of the two children
-  
-  if(list[larger] > list[i]){
-    //swap largest child with parent
-    list[larger] = list[larger]^list[i];
-    list[i] = list[larger]^list[i];
-    list[larger] = list[larger]^list[i];
-  }        
+    // If largest is not the current node, swap and recurse
+    if (largest != i) {
+        // Swap the current node with the largest child
+        int temp = list[i];
+        list[i] = list[largest];
+        list[largest] = temp;
+
+        maxHeapify(list, largest, len);
+    }
 }
-
 void heapSort(int* list, int len){
   if(len == 1) return;
   //step 1: max heap  - bubble up largest values  
-  maxHeapMaker(list, 0, len);
+  maxHeapify(list, 0, len);
  
   
   //STEP 2: swap biggest and last, then decrease size of heap
