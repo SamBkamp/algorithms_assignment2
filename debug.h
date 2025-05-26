@@ -1,7 +1,7 @@
 #ifndef DEBUG
 #define DEBUG
 
-#define IN_LEN 1000
+#define IN_LEN 40000
 
 void printList(int* list);
 void printList_debug(int* list, int len);
