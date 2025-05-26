@@ -3,7 +3,7 @@
 import random
 import sys
 
-amount = 5
+amount = 500000
 
 if(len(sys.argv) < 2):
     print("usage: "+sys.argv[0]+" random|reverse|duplicate|extreme")
