@@ -3,7 +3,7 @@
 import random
 import sys
 
-amount = 40000
+amount = 2000
 
 if(len(sys.argv) < 2):
     print("usage: "+sys.argv[0]+" random")
@@ -17,6 +17,10 @@ print("  int* list = malloc(sizeof(int) * len);")
 if sys.argv[1] == "random":
     for i in range(0, amount):
         print("  list["+str(i)+"] = "+str(random.randint(0, 800))+";")
+
+if sys.argv[1] == "reverse":
+    for i in range(0, amount):
+        print("  list["+str(i)+"] = "+str(amount-i)+";")
 
 print("  return list;")
 print("}")
