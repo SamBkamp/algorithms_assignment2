@@ -13,6 +13,7 @@ void insertionSort(int* list, int len, int key){
     list[j+1] = list[j];
     j = j-1;
   }
+
   list[j+1] = keyVal;
   insertionSort(list, len, key+1);
 }

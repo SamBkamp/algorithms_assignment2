@@ -76,6 +76,18 @@ int main(int argc, char* argv[]){
   //printList(selectionList);
   printf("SELECTION SORT TOOK %d MS\n", (stop.tv_sec - start.tv_sec) * 1000000 + stop.tv_usec - start.tv_usec);
   free(selectionList);
+
+  int* quickInsertList = malloc(sizeof(int) * IN_LEN);
+  memcpy(quickInsertList, list, sizeof(int) * IN_LEN);
+  //printList(quickInsertList);
+  gettimeofday(&start, NULL);
+  quickInsertSort(quickInsertList, 0, IN_LEN);
+  gettimeofday(&stop, NULL);
+  //printList(quickInsertList);
+  printf("QUICK + INSERT SORT TOOK %d MS\n", (stop.tv_sec - start.tv_sec) * 1000000 + stop.tv_usec - start.tv_usec);
+  free(quickInsertList);
+
+
   
   printf("------------------------\n");
   
