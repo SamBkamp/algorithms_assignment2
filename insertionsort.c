@@ -5,15 +5,14 @@
 #include "insertionsort.h"
 #include "debug.h"
 
-
 void insertionSort(int* list, int len, int key){
   if(key == len) return;
-  int j = key;
-  while(list[key] < list[j-1] && j >= 0){
+  int keyVal = list[key];
+  int j = key-1;
+  while(keyVal < list[j] && j >= 0){
     list[j+1] = list[j];
-    j--;
+    j = j-1;
   }
-  
-  list[j] = list[key];
+  list[j+1] = keyVal;
   insertionSort(list, len, key+1);
 }

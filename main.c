@@ -66,7 +66,7 @@ int main(int argc, char* argv[]){
   //printList(insertionList);
   printf("INSERTION SORT TOOK %d MS\n", (stop.tv_sec - start.tv_sec) * 1000000 + stop.tv_usec - start.tv_usec);
   free(insertionList);
-
+  
   int* selectionList = malloc(sizeof(int) * IN_LEN);
   memcpy(selectionList, list, sizeof(int) * IN_LEN);
   //printList(selectionList);

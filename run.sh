@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./genList.py random > inputs.c
+./genList.py extreme > inputs.c
 gcc *.c
 ./a.out >> stats

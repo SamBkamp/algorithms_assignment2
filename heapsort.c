@@ -33,9 +33,7 @@ void maxHeapify(int* list, int i, int len) {
 void heapSort(int* list, int len){
   if(len == 1) return;
   //step 1: max heap  - bubble up largest values  
-  maxHeapify(list, 0, len);
- 
-  
+  maxHeapify(list, 0, len);   
   //STEP 2: swap biggest and last, then decrease size of heap
   //xor swap
   list[0] = list[0] ^ list[len-1];
